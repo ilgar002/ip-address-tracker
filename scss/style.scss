@@ -239,14 +239,15 @@ body {
     }
 }
 @media (max-width:576px) {
-    $header-height: 280px;
+    $header-height: 270px;
 
     .container {
         header {
             height: $header-height;
 
             .header-content {
-                padding-top: 20px;
+                padding-top: 15px;
+                gap: 10px;
 
                 .title {
                     h1 {

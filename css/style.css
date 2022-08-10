@@ -224,10 +224,11 @@ body {
 
 @media (max-width: 576px) {
   .container header {
-    height: 280px;
+    height: 270px;
   }
   .container header .header-content {
-    padding-top: 20px;
+    padding-top: 15px;
+    gap: 10px;
   }
   .container header .header-content .title h1 {
     color: #fff;
@@ -294,7 +295,7 @@ body {
     font-size: 1.30rem;
   }
   .container main {
-    height: calc(100vh - 280px);
+    height: calc(100vh - 270px);
   }
   .container main #map {
     height: 100%;
