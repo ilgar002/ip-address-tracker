@@ -1,0 +1,323 @@
+@import '../scss/variables/variables';
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Rubik', sans-serif;
+}
+
+.container {
+    height: 100vh;
+
+    header {
+        height: $header-height;
+        background-image: url(../images/pattern-bg.png);
+        position: relative;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        .header-content {
+            padding-top: 25px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+
+            .title {
+                h1 {
+                    color: #fff;
+                    letter-spacing: 1px;
+                    font-weight: 500;
+                }
+            }
+
+            .ip-form {
+                width: 50%;
+                display: flex;
+                height: 55px;
+
+                .ip-input {
+                    width: 100%;
+                    border: none;
+                    border-top-left-radius: 10px;
+                    border-bottom-left-radius: 10px;
+                    outline: none;
+                    padding-left: 25px;
+                    padding-right: 25px;
+                    color: $clr-very-dark-gray;
+                    font-size: 1.2rem;
+                    letter-spacing: 1px;
+
+                    &::placeholder {
+                        color: $clr-dark-gray;
+                        font-size: 1.1rem;
+                    }
+                }
+
+                button {
+                    width: 70px;
+                    border: none;
+                    background-color: #3F3F3F;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-top-right-radius: 10px;
+                    border-bottom-right-radius: 10px;
+                    cursor: pointer;
+
+                    img {}
+                }
+            }
+
+            .location-details {
+                background-color: #fff;
+                width: 85%;
+                height: 150px;
+                border-radius: 20px;
+                display: flex;
+                align-items: center;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translate(-50%, 50%);
+                z-index: 100;
+
+                .col {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    position: relative;
+                    width: 25%;
+                    text-align: center;
+
+                    &:not(:first-child) {
+                        &::after {
+                            content: "";
+                            height: 60px;
+                            width: 1px;
+                            background-color: $clr-dark-gray;
+                            position: absolute;
+                            left: 0;
+                            top: 50%;
+                            transform: translateY(-50%);
+
+                        }
+                    }
+
+                    .title {
+                        color: $clr-dark-gray;
+                        font-weight: 500;
+                        font-size: 0.9rem;
+
+                    }
+
+                    .content {
+                        color: $clr-very-dark-gray;
+                        font-size: 1.6rem;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+
+    main {
+        height: calc(100vh - #{$header-height});
+        #map {
+            height: 100%;
+            position: relative;
+            z-index: 1;
+        }
+    }
+}
+@media (max-width:992px) {
+    .container {
+        header {
+            .header-content {
+                .title {
+                    h1 {}
+                }
+
+                .ip-form {
+                    width: 80%;
+
+                    .ip-input {
+                        &::placeholder {}
+                    }
+
+                    button {
+                        img {}
+                    }
+                }
+
+                .location-details {
+                    width: 88%;
+
+                    .col {
+                        padding: calc(768px / #{$padding-ratio});
+
+                        &:not(:first-child) {
+                            &::after {}
+                        }
+
+                        .title {
+                            font-size: 0.9rem
+                        }
+
+                        .content {
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        main {
+            height: calc(100vh - #{$header-height});
+
+            #map {
+                height: 100%;
+                position: relative;
+                z-index: 1;
+            }
+        }
+    }
+}
+@media (max-width:768px) {
+    .container {
+        header {
+            .header-content {
+                .title {
+                    h1 {}
+                }
+
+                .ip-form {
+                    width: 80%;
+
+                    .ip-input {
+                        &::placeholder {}
+                    }
+
+                    button {
+                        img {}
+                    }
+                }
+
+                .location-details {
+                    width: 88%;
+
+                    .col {
+                        padding: calc(768px / #{$padding-ratio});
+
+                        &:not(:first-child) {
+                            &::after {}
+                        }
+
+                        .title {
+                            font-size: 0.85rem
+                        }
+
+                        .content {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        main {
+            height: calc(100vh - #{$header-height});
+
+            #map {
+                height: 100%;
+                position: relative;
+                z-index: 1;
+            }
+        }
+    }
+}
+@media (max-width:576px) {
+    $header-height: 300px;
+
+    .container {
+        header {
+            height: $header-height;
+
+            .header-content {
+                padding-top: 20px;
+
+                .title {
+                    h1 {
+                        color: #fff;
+                        letter-spacing: 1px;
+                        font-weight: 500;
+                        font-size: 1.8rem;
+                    }
+                }
+
+                .ip-form {
+                    width: 90%;
+                    height: 60px;
+
+                    .ip-input {
+                        &::placeholder {
+                            font-size: 0.85rem;
+                        }
+                    }
+
+                    button {
+                        width: 80px;
+                        background-color: $clr-very-dark-gray;
+
+                        img {
+                            width: 14px;
+                        }
+                    }
+                }
+
+                .location-details {
+                    width: 88%;
+                    height: auto;
+                    flex-direction: column;
+                    z-index: 100;
+
+                    .col {
+                        width: 100%;
+                        flex-grow: 1;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        padding: calc(576px / #{$padding-ratio});
+
+                        &:not(:first-child) {
+                            &::after {
+                                display: none;
+                            }
+                        }
+
+                        .title {
+                            font-size: 0.8rem;
+                        }
+
+                        .content {
+                            font-size: 1.30rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        main {
+            height: calc(100vh - #{$header-height});
+
+            #map {
+                height: 100%;
+                position: relative;
+                z-index: 1;
+            }
+        }
+    }
+}
+
